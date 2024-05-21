@@ -128,7 +128,13 @@ public class main {
             } else {
                 moreEvents = false;
             }
-            boolean moreTasks = true;
+        }
+        // printing all events and then also declaring if there are conflicts
+        for (int i = 0; i < schedule.amountOfEvents(); i++) {
+            System.out.println(schedule.getEvent(i).toString());
+        }
+
+        boolean moreTasks = true;
             while (moreTasks) {
                 System.out.println("Enter your task name. If there are no more tasks, enter 'STOP'.");
                 String nameTask = scan.nextLine();
@@ -155,8 +161,6 @@ public class main {
                 System.out.println("Task added!");
             }
 
-            
-        }
     }
     
 }

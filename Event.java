@@ -20,12 +20,18 @@ public class Event {
     public void setEndTime(String time) {
         endTime = time;
     }
+    public void setName(String name) {
+        eventName = name;
+    }
     public String getStartTime () {
         return startTime;
     }
     public String getEndTime () {
         return endTime;
     } 
+    public String getName() {
+        return eventName;
+    }
 }
 
 

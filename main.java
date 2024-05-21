@@ -41,21 +41,29 @@ public class main {
                 String start = scan.nextLine();
                 
                 // a bunch of booleans to check if start is in the correct format
-                boolean a = isNumeric(start.substring(0, 2));
-                boolean b = isNumeric(start.substring(3));
+                boolean a = false;
+                boolean b = false;
                 boolean c = (start.length() == 5);
-                boolean d = start.substring(2, 3).equals(":");
-    
+                boolean d = false;
+
+                if (c) {
+                    a = isNumeric(start.substring(0, 2));
+                    b = isNumeric(start.substring(3));
+                    d = start.substring(2, 3).equals(":");
+                }
+
                 // if start is not in the right format, prompt the user to try again
                 while (!a || !b || !c || !d) {
                     System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
                     System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
                     start = scan.nextLine();
-    
-                    a = isNumeric(start.substring(0, 2));
-                    b = isNumeric(start.substring(3));
+
                     c = (start.length() == 5);
-                    d = start.substring(2, 3).equals(":");
+                    if (c) {
+                        a = isNumeric(start.substring(0, 2));
+                        b = isNumeric(start.substring(3));
+                        d = start.substring(2, 3).equals(":");
+                    }                
                 }
     
                 event.setStartTime(start);
@@ -65,11 +73,18 @@ public class main {
                 System.out.println("Great! What is the end time of " + name + "? Enter in military time in the format XX:XX.");
                 String end = scan.nextLine();
                 // a bunch of booleans to check if start is in the correct format
-                a = isNumeric(end.substring(0, 2));
-                b = isNumeric(end.substring(3));
+                a = false;
+                b = false;
                 c = (end.length() == 5);
-                d = end.substring(2, 3).equals(":");
-                boolean e = compareTimes(end, start);
+                d = false;
+                boolean e = false;
+
+                if (c) {
+                    a = isNumeric(end.substring(0, 2));
+                    b = isNumeric(end.substring(3));
+                    d = end.substring(2, 3).equals(":");
+                    e = compareTimes(end, start);
+                }
     
                 // if end is not in the right format / not a valid time, prompt the user to try again
                 while (!a || !b || !c || !d || !e) {
@@ -77,22 +92,27 @@ public class main {
                         System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
                         System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
-    
-                        a = isNumeric(end.substring(0, 2));
-                        b = isNumeric(end.substring(3));
+
                         c = (end.length() == 5);
-                        d = end.substring(2, 3).equals(":");
-                        e = compareTimes(end, start);
+                        if (c) {
+                            a = isNumeric(end.substring(0, 2));
+                            b = isNumeric(end.substring(3));
+                            d = end.substring(2, 3).equals(":");
+                            e = compareTimes(end, start);
+                        }
+                        
                     } else if (!e) {
                         System.out.println("End time must occur after the start time. You wouldn't want negative time, right?");
                         System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
     
-                        a = isNumeric(end.substring(0, 2));
-                        b = isNumeric(end.substring(3));
                         c = (end.length() == 5);
-                        d = end.substring(2, 3).equals(":");
-                        e = compareTimes(end, start);
+                        if (c) {
+                            a = isNumeric(end.substring(0, 2));
+                            b = isNumeric(end.substring(3));
+                            d = end.substring(2, 3).equals(":");
+                            e = compareTimes(end, start);
+                        }
                     }
                 }
                 

@@ -32,12 +32,12 @@ public class main {
     
         while (moreEvents) {
             System.out.println("Enter your event name. If there are no more events scheduled for today, enter 'STOP'.");
-            String name = scan.nextLine();
-            if (!name.equals("STOP")) {
-                Event event = new Event(name);
+            String nameEvent = scan.nextLine();
+            if (!nameEvent.equals("STOP")) {
+                Event event = new Event(nameEvent);
     
                 // FOR START TIME ///////////////////////////////////////////////////////////////////////////
-                System.out.println("Great! What is the start time of " + name + "? Enter in military time in the format XX:XX.");
+                System.out.println("Great! What is the start time of " + nameEvent + "? Enter in military time in the format XX:XX.");
                 String start = scan.nextLine();
                 
                 // a bunch of booleans to check if start is in the correct format
@@ -131,8 +131,8 @@ public class main {
             boolean moreTasks = true;
             while (moreTasks) {
                 System.out.println("Enter your task name. If there are no more tasks, enter 'STOP'.");
-                String name = scan.nextLine();
-                if (name.equalsIgnoreCase("STOP")) {
+                String nameTask = scan.nextLine();
+                if (nameTask.equalsIgnoreCase("STOP")) {
                     moreTasks = false;
                     break;
                 }
@@ -150,7 +150,7 @@ public class main {
                     scan.nextLine(); 
                 }
     
-                Task task = new Task(name, duration, priority);
+                Task task = new Task(nameTask, duration, priority);
                 schedule.addTask(task);
                 System.out.println("Task added!");
             }

@@ -7,8 +7,26 @@ public class Schedule {
     public void addEvent(Event event) {
         events.add(event);
     }
+    public int amountOfEvents() {
+        return events.size();
+    }
+    public Event getEvent(int i) {
+        return events.get(i);
+    }
+    public int getEventIndex(Event event) {
+        for (int i = 0; i < events.size(); i++) {
+            if ((event.getName()).equals()) {
+                
+            }
+        }
+    }
     public boolean checkValid (Event event) {
-        if (event.getStartTime())
+        for (int i = 0; i < events.size(); i++) {
+            if (main.compareTimes()) {
+
+            }
+        }
+        
     }
 }
 

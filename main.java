@@ -128,7 +128,34 @@ public class main {
             } else {
                 moreEvents = false;
             }
+            boolean moreTasks = true;
+            while (moreTasks) {
+                System.out.println("Enter your task name. If there are no more tasks, enter 'STOP'.");
+                String name = scan.nextLine();
+                if (name.equalsIgnoreCase("STOP")) {
+                    moreTasks = false;
+                    break;
+                }
     
+                System.out.println("Enter the duration of the task in minutes.");
+                int duration = scan.nextInt();
+                scan.nextLine(); 
+    
+                System.out.println("Enter the priority of the task (1-5).");
+                int priority = scan.nextInt();
+                scan.nextLine(); 
+                while (priority < 1 || priority > 5) {
+                    System.out.println("Invalid priority. Please enter a priority between 1 and 5.");
+                    priority = scan.nextInt();
+                    scan.nextLine(); 
+                }
+    
+                Task task = new Task(name, duration, priority);
+                schedule.addTask(task);
+                System.out.println("Task added!");
+            }
+
+            
         }
     }
     

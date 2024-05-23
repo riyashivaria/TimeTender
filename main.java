@@ -10,7 +10,7 @@ public class main {
         }  
     }
   public static boolean compareTimes (String timeA, String timeB) { // returns true if timeA is greater, returns false if equal or less than timeB
-      int compareHour = timeA.substring(0, 2).compareTo(timeB.substring(0, 2));
+      /*int compareHour = timeA.substring(0, 2).compareTo(timeB.substring(0, 2));
       if (compareHour > 0) { // if the hour time of timeA is bigger than timeB
           return true;
       } else if (compareHour == 0) { // if the hour time of timeA is equal to timeB
@@ -22,7 +22,13 @@ public class main {
           }
       } else {
           return false;
-      }
+      }*/
+      timeA = timeA.substring(0, 2) + timeA.substring(3);
+      timeB = timeB.substring(0, 2) + timeB.substring(3);
+  
+      int a = Integer.parseInt(timeA);
+      int b = Integer.parseInt(timeB);
+      return a > b;
   }
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -55,7 +61,7 @@ public class main {
                 // if start is not in the right format, prompt the user to try again
                 while (!a || !b || !c || !d) {
                     System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
-                    System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                    System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                     start = scan.nextLine();
 
                     c = (start.length() == 5);
@@ -70,7 +76,7 @@ public class main {
     
     
                 // FOR END TIME ///////////////////////////////////////////////////////////////////////////
-                System.out.println("Great! What is the end time of " + name + "? Enter in military time in the format XX:XX.");
+                System.out.println("Great! What is the end time of " + nameEvent + "? Enter in military time in the format XX:XX.");
                 String end = scan.nextLine();
                 // a bunch of booleans to check if start is in the correct format
                 a = false;
@@ -90,7 +96,7 @@ public class main {
                 while (!a || !b || !c || !d || !e) {
                     if (!a || !b || !c || !d) {
                         System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
-                        System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                        System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
 
                         c = (end.length() == 5);
@@ -103,7 +109,7 @@ public class main {
                         
                     } else if (!e) {
                         System.out.println("End time must occur after the start time. You wouldn't want negative time, right?");
-                        System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                        System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
     
                         c = (end.length() == 5);

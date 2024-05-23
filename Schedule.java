@@ -20,10 +20,11 @@ public class Schedule {
             }
         }
     }
-    public boolean checkValid (Event event) {
+    
+    public boolean checkValid (Event event, String timeA, String timeB) {
         for (int i = 0; i < events.size(); i++) {
-            if (main.compareTimes()) {
-
+            if (!main.compareTimes(timeA, timeB)) {
+                return
             }
         }
         

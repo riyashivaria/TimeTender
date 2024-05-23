@@ -19,6 +19,7 @@ public class Event {
     }
     public void setEndTime(String time) {
         endTime = time;
+        // we should accomodate for if start and end time are the same
     }
     public void setName(String name) {
         eventName = name;

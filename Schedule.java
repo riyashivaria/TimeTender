@@ -1,6 +1,7 @@
 import java.util.*;
 public class Schedule {
     private ArrayList<Event> events;
+    private ArrayList<Task> tasks;
     public Schedule() {
         events = new ArrayList<Event>();
     }
@@ -9,8 +10,9 @@ public class Schedule {
     }
 
     public void addTask(Task task) {
-        task.add(task);
+        tasks.add(task);
     }
+    // ideas: make a calendar that gives good times to do the tasks, create a time block 
     public int amountOfEvents() {
         return events.size();
     }
@@ -19,10 +21,9 @@ public class Schedule {
     }
     public int getEventIndex(Event event) {
         for (int i = 0; i < events.size(); i++) {
-            if ((event.getName()).equals()) {
-                
-            }
+           // if ((event.getName()).equals()) {}
         }
+        return 1;
     }
     
     public boolean checkValid (Event event, String timeA, String timeB) {

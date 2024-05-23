@@ -14,6 +14,7 @@ public class Event {
     public String toString() {
         return startTime + " - " + endTime + ": " + eventName;
     }
+    
     public void setStartTime(String time) {
         startTime = time;
     }

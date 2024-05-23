@@ -7,6 +7,10 @@ public class Schedule {
     public void addEvent(Event event) {
         events.add(event);
     }
+
+    public void addTask(Task task) {
+        task.add(task);
+    }
     public int amountOfEvents() {
         return events.size();
     }

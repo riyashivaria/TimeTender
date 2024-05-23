@@ -55,7 +55,7 @@ public class main {
                 // if start is not in the right format, prompt the user to try again
                 while (!a || !b || !c || !d) {
                     System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
-                    System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                    System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                     start = scan.nextLine();
 
                     c = (start.length() == 5);
@@ -70,7 +70,7 @@ public class main {
     
     
                 // FOR END TIME ///////////////////////////////////////////////////////////////////////////
-                System.out.println("Great! What is the end time of " + name + "? Enter in military time in the format XX:XX.");
+                System.out.println("Great! What is the end time of " + nameEvent + "? Enter in military time in the format XX:XX.");
                 String end = scan.nextLine();
                 // a bunch of booleans to check if start is in the correct format
                 a = false;
@@ -90,7 +90,7 @@ public class main {
                 while (!a || !b || !c || !d || !e) {
                     if (!a || !b || !c || !d) {
                         System.out.println("Format is not correct. Here are examples to help you: 9:00 am will be converted to 09:00, and 1:00 pm will be converted to 13:00.");
-                        System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                        System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
 
                         c = (end.length() == 5);
@@ -103,7 +103,7 @@ public class main {
                         
                     } else if (!e) {
                         System.out.println("End time must occur after the start time. You wouldn't want negative time, right?");
-                        System.out.println("Please enter the start time of " + name + " again. Enter in military time in the format XX:XX.");
+                        System.out.println("Please enter the start time of " + nameEvent + " again. Enter in military time in the format XX:XX.");
                         end = scan.nextLine();
     
                         c = (end.length() == 5);

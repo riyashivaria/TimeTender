@@ -34,6 +34,7 @@ public class main {
         Scanner scan = new Scanner(System.in);
         boolean moreEvents = true;
         Schedule schedule = new Schedule();
+        ArrayList<Task> taskList = new ArrayList<>();
         System.out.println("Welcome to TimeTender!");
     
         while (moreEvents) {
@@ -124,7 +125,7 @@ public class main {
                 
                 event.setEndTime(end);
     
-                schedule.addEvent(event);
+                schedule.addEvent(event, start, end);
                 System.out.println("Event added! Add another event? Say 'YES' or 'NO'.");
                 String output = scan.nextLine();
                 if (output.equals("NO")) {
